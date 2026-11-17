@@ -6,7 +6,7 @@ This project is built for learning and practice. The goal is to keep the code ea
 
 ## Included
 
-- Dynamic Arrays []
+- Dynamic Arrays [Done]
 - Linked List    [Done]
 - Stack          []
 - Queue          []
