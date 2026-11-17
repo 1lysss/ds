@@ -35,9 +35,9 @@ void da_insert(da *arr, int val) {
 void da_print(da arr) {
     if (!arr.data) return;
 
-    for (int i = 0; i<arr.count; i++) {
+    for (size_t i = 0; i<arr.count; i++) {
         //debugh
-        printf("arr.data[%d] = %d\n", i, arr.data[i]);
+        printf("arr.data[%zu] = %d\n", i, arr.data[i]);
     }
 }
 
@@ -50,7 +50,6 @@ void da_free(da *arr) {
     arr->count = 0;
 }
 
-
 void da_remove(da *arr, size_t idx) {
     if (!arr->data) return;
     if (idx < arr->count) { // valid idx, also size_t is unsigned (>=0)
@@ -62,6 +61,23 @@ void da_remove(da *arr, size_t idx) {
     } else return;
 }
 
+int da_get(const da *arr, size_t idx) {
+    assert(arr);
+    assert(idx < arr->count);
+    return arr->data[idx];
+}
+
+int da_set(da *arr, size_t idx, int val) {
+    assert(arr);
+    assert(idx < arr->count);
+    arr->data[idx] = val;
+    return 0;
+}
+
+size_t da_count(const da *arr) {
+    assert(arr);
+    return arr->count;
+}
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////// LINKED LIST START ///////////////////////////
 

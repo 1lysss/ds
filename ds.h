@@ -29,9 +29,11 @@ int ll_count(Node *head);
 
 da da_init(size_t size);
 void da_insert(da *arr, int val);
-void da_free(da *arr);
 void da_print(da arr);
 void da_free(da *arr);
 void da_remove(da *arr, size_t index);
+int da_get(const da *arr, size_t idx);
+int da_set(da *arr, size_t idx, int val);
+size_t da_count(const da *arr);
 
 #endif
